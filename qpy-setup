@@ -1,0 +1,31 @@
+#!/usr/bin/env python
+
+# Imports
+import os
+import sys
+import shutil
+
+## GOAL:
+# Have the checks install the app if not found
+
+##[[FUNCTIONS]]##
+
+def check_if_exist(name):
+  return find_executable(name) is not None
+
+def pip_install_xonsh():
+  os.system("pip3 install xonsh[ptk,linux]")
+
+def do_checks():
+  check_if_exist("python3")
+  check_if_exist("pip3")
+  
+def main():
+  do_checks()
+  pip_install_xonsh()
+# configuration?
+## write a custom one?
+
+##[[MAIN]]##
+
+main()
